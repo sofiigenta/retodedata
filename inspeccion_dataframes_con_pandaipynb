@@ -1,0 +1,44 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "metadata": {
+    "tags": [],
+    "cell_id": "08d89346-cc97-458a-b637-b49897190183",
+    "deepnote_to_be_reexecuted": false,
+    "source_hash": "f9485368",
+    "execution_start": 1645283395961,
+    "execution_millis": 148,
+    "deepnote_cell_type": "code"
+   },
+   "source": "import pandas as pd\n\ndf = pd.read_csv('/work/studentsperformance_f29e92e5-811f-4cf9-9504-91644b0ecc35.csv')\n\nprint(df.shape)\n\nprint(df.size)\n\nprint(df.info)\n\nprint(df.describe())\n\nprint(df.columns)\n\n\nprint(df['math score'].mean())\n\nprint(df['math score'].median())\n\nprint(df['math score'].std())",
+   "outputs": [
+    {
+     "name": "stdout",
+     "text": "(1000, 8)\n8000\n<bound method DataFrame.info of      gender race/ethnicity parental level of education         lunch  \\\n0    female        group B           bachelor's degree      standard   \n1    female        group C                some college      standard   \n2    female        group B             master's degree      standard   \n3      male        group A          associate's degree  free/reduced   \n4      male        group C                some college      standard   \n..      ...            ...                         ...           ...   \n995  female        group E             master's degree      standard   \n996    male        group C                 high school  free/reduced   \n997  female        group C                 high school  free/reduced   \n998  female        group D                some college      standard   \n999  female        group D                some college  free/reduced   \n\n    test preparation course  math score  reading score  writing score  \n0                      none          72             72             74  \n1                 completed          69             90             88  \n2                      none          90             95             93  \n3                      none          47             57             44  \n4                      none          76             78             75  \n..                      ...         ...            ...            ...  \n995               completed          88             99             95  \n996                    none          62             55             55  \n997               completed          59             71             65  \n998               completed          68             78             77  \n999                    none          77             86             86  \n\n[1000 rows x 8 columns]>\n       math score  reading score  writing score\ncount  1000.00000    1000.000000    1000.000000\nmean     66.08900      69.169000      68.054000\nstd      15.16308      14.600192      15.195657\nmin       0.00000      17.000000      10.000000\n25%      57.00000      59.000000      57.750000\n50%      66.00000      70.000000      69.000000\n75%      77.00000      79.000000      79.000000\nmax     100.00000     100.000000     100.000000\nIndex(['gender', 'race/ethnicity', 'parental level of education', 'lunch',\n       'test preparation course', 'math score', 'reading score',\n       'writing score'],\n      dtype='object')\n66.089\n66.0\n",
+     "output_type": "stream"
+    }
+   ],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "source": "<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=e00223e1-940a-419b-854e-d5327f2e6aa8' target=\"_blank\">\n<img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>\nCreated in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a>",
+   "metadata": {
+    "tags": [],
+    "created_in_deepnote_cell": true,
+    "deepnote_cell_type": "markdown"
+   }
+  }
+ ],
+ "nbformat": 4,
+ "nbformat_minor": 2,
+ "metadata": {
+  "orig_nbformat": 2,
+  "deepnote": {
+   "is_reactive": false
+  },
+  "deepnote_notebook_id": "81ee3bb2-92da-4901-98e9-3815e3050654",
+  "deepnote_execution_queue": []
+ }
+}
